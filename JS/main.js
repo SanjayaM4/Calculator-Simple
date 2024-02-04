@@ -6,16 +6,12 @@ function clearDisplay() {
     document.getElementById('display').value = '';
 }
 
-function clearResult() {
-    document.getElementById('result').innerText = '';
-}
-
 function calculate() {
     try {
         const expression = document.getElementById('display').value;
         const result = math.evaluate(expression);
-        document.getElementById('result').innerText = result;
+        document.getElementById('display').value = result;
     } catch (error) {
-        document.getElementById('result').innerText = 'Error';
+        document.getElementById('display').innerText = 'Error';
     }
 }
